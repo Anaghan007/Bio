@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anaghan's Profile</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<link rel="icon" href="my-avatar.png" type="image/png" />
+  <link rel="icon" href="my-avatar.png" type="image/png" />
   <script>
     if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.classList.add('dark');
@@ -32,7 +32,8 @@
 
   <!-- Header -->
   <header class="no-print sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md p-4 flex justify-evenly items-center">
-    <img src="my-avatar.png" class="h-14"><h1 class="text-xl font-bold tracking-wide flex items-center">Anaghan's Profile</h1>
+    <img src="my-avatar.png" class="h-14">
+    <h1 class="text-xl font-bold tracking-wide flex items-center">Anaghan's Profile</h1>
     <div class="flex items-center gap-3">
       <button onclick="toggleDark()" class="bg-gray-200 dark:bg-gray-700 p-2 rounded">🌓</button>
       <div class="flex gap-1">
@@ -57,7 +58,7 @@
     <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
       <h3 class="text-xl font-semibold mb-4 border-b pb-2" data-en="My Information" data-gu="મારી માહિતી"></h3>
       <div class="grid sm:grid-cols-2 gap-4 mb-6">
-        <p><strong data-en="Full Name:" data-gu="મારું નામ:"></strong> <span data-en="Anaghan Smit" data-gu="અણઘણ સ્મિત"></span></p>
+        <p><strong data-en="Full Name:" data-gu="મારું નામ:"></strong> <span data-en="Anaghan Smit Ashokbhai" data-gu="અણઘણ સ્મિત અશોકભાઇ"></span></p>
         <p><strong data-en="Age:" data-gu="ઉંમર:"></strong> <span data-en="23" data-gu="૨૩"></span></p>
         <p><strong data-en="Caste:" data-gu="જાતિ:"></strong> <span data-en="Patel (Leuva)" data-gu="પટેલ (લેઉવા)"></span></p>
         <p><strong data-en="City & Country:" data-gu="શહેર અને દેશ:"></strong> <span data-en="Surat, Gujarat" data-gu="સુરત, ગુજરાત"></span></p>
@@ -87,9 +88,14 @@
     <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
       <h3 class="text-xl font-semibold mb-4 border-b pb-2" data-en="Family Details" data-gu="પરિવારની માહિતી"></h3>
       <div class="grid sm:grid-cols-2 gap-4">
+        <p><strong data-en="Father's Name:" data-gu="પિતાનું નામ:"></strong> <span data-en="Ashokbhai Ganeshbhai Anaghan" data-gu="અશોકભાઈ ગણેશભાઈ અણઘણ"></span></p>
         <p><strong data-en="Father's Occupation:" data-gu="પિતાનું વ્યવસાય:"></strong> <span data-en="Textile" data-gu="ટેક્સટાઇલ"></span></p>
+        <p><strong data-en="Mother's Name:" data-gu="માતાનું નામ:"></strong> <span data-en="Jayshreeben Ashokbhai Anaghan" data-gu="જયશ્રીબેન અશોકભાઈ અણઘણ"></span></p>
         <p><strong data-en="Mother's Occupation:" data-gu="માતાનું વ્યવસાય:"></strong> <span data-en="Housewife" data-gu="ગૃહિણી"></span></p>
-        <p><strong data-en="Siblings:" data-gu="ભાઇ-બહેનો:"></strong> <span data-en="1 Elder Brother working in London, UK" data-gu="૧ મોટો ભાઈ લંડન, UK માં નોકરી કરે છે"></span></p>
+        <p><strong data-en="Sibling's Name:" data-gu="ભાઈનું નામ:"></strong> <span data-en="Darshil Ashokbhai Anaghan" data-gu="દર્શિલ અશોકભાઈ અણઘણ"></span></p>
+        <p><strong data-en="Sibling's Bachelor's:" data-gu="ભાઈનો સ્નાતક અભ્યાસ:"></strong> <span data-en="B.Com (VNSGU)" data-gu="બી.કોમ (વી.એન.એસ.જી.યુ.)"></span></p>
+        <p><strong data-en="Sibling's Master's:" data-gu="ભાઈનો માસ્ટર અભ્યાસ:"></strong> <span data-en="MBA (LMU, UK)" data-gu="એમ.બી.એ. (એલ.એમ.યુ., યુકે)"></span></p>
+        <p><strong data-en="Siblings:" data-gu="ભાઈ-બહેનો:"></strong> <span data-en="1 Elder Brother working in London, UK" data-gu="૧ મોટો ભાઈ લંડન, UK માં નોકરી કરે છે"></span></p>
       </div>
     </section>
 
@@ -130,17 +136,20 @@
       html.classList.toggle('dark');
       localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
     }
+
     function setLang(lang) {
       localStorage.setItem('lang', lang);
       currentLang = lang;
       updateLang();
       updateFlagStyles();
     }
+
     let currentLang = localStorage.getItem('lang');
     if (!['en', 'gu'].includes(currentLang)) {
       currentLang = 'en';
       localStorage.setItem('lang', 'en');
     }
+
     function updateLang() {
       document.querySelectorAll('[data-en]').forEach(el => {
         const translated = el.getAttribute(`data-${currentLang}`);
@@ -149,10 +158,12 @@
         }
       });
     }
+
     function updateFlagStyles() {
       document.getElementById('flag-en').classList.toggle('ring-2', currentLang === 'en');
       document.getElementById('flag-gu').classList.toggle('ring-2', currentLang === 'gu');
     }
+
     window.onload = () => {
       updateLang();
       updateFlagStyles();
