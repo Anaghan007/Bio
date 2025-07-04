@@ -1,193 +1,210 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anaghan's Profile</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="icon" href="my-avatar.png" type="image/png" />
-  <script>
-    if (localStorage.getItem('theme') === 'dark') {
-      document.documentElement.classList.add('dark');
-    }
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: { poppins: ['Poppins', 'sans-serif'] },
-        },
-      },
-    };
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Poppins', sans-serif; }
-    @media print { .no-print { display: none !important; } }
-  </style>
-</head>
-<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition duration-500">
-
-  <!-- Header -->
-  <header class="no-print sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md p-4 flex justify-evenly items-center">
-    <img src="my-avatar.png" class="h-14">
-    <h1 class="text-xl font-bold tracking-wide flex items-center">Anaghan's Profile</h1>
-    <div class="flex items-center gap-3">
-      <button onclick="toggleDark()" class="bg-gray-200 dark:bg-gray-700 p-2 rounded">🌓</button>
-      <div class="flex gap-1">
-        <button id="flag-en" onclick="setLang('en')" class="text-2xl px-1 rounded">🇨🇦 En</button>
-        <button id="flag-gu" onclick="setLang('gu')" class="text-2xl px-1 rounded">🇮🇳 Guj</button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-pink-100 to-blue-100 dark:from-gray-800 dark:to-gray-700 py-10 text-center">
-    <div class="flex flex-col items-center">
-      <img src="my-avatar.png" alt="Profile Photo" class="rounded-full shadow-lg w-32 h-32 object-cover mb-4 border-4 border-white dark:border-gray-800">
-      <h2 class="text-3xl font-bold mb-2" data-en="Welcome to My Profile" data-gu="મારા પરિચયમાં આપનું સ્વાગત છે"></h2>
-      <p class="text-base" data-en="Let's connect for a beautiful future." data-gu="ચાલો એક સુંદર ભવિષ્ય માટે જોડાવા ચાલો."></p>
-    </div>
-  </section>
-
-  <main class="max-w-5xl mx-auto px-4 py-8 space-y-10 text-base">
-
-    <!-- My Information -->
-    <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
-      <h3 class="text-xl font-semibold mb-4 border-b pb-2" data-en="My Information" data-gu="મારી માહિતી"></h3>
-      <div class="grid sm:grid-cols-2 gap-4 mb-6">
-        <p><strong data-en="Full Name:" data-gu="મારું નામ:"></strong> <span data-en="Anaghan Smit Ashokbhai" data-gu="અણઘણ સ્મિત અશોકભાઇ"></span></p>
-        <p><strong data-en="Age:" data-gu="ઉંમર:"></strong> <span data-en="23" data-gu="૨૩"></span></p>
-        <p><strong data-en="Caste:" data-gu="જાતિ:"></strong> <span data-en="Patel (Leuva)" data-gu="પટેલ (લેઉવા)"></span></p>
-        <p><strong data-en="City & Country:" data-gu="શહેર અને દેશ:"></strong> <span data-en="Surat, Gujarat" data-gu="સુરત, ગુજરાત"></span></p>
-      </div>
-      <h4 class="text-lg font-semibold mt-4 mb-2 border-b pb-1" data-en="Bachelor's Degree" data-gu="સ્નાતક અભ્યાસ"></h4>
-      <div class="grid sm:grid-cols-2 gap-4 mb-4">
-        <p><strong data-en="Degree:" data-gu="અભ્યાસ:"></strong> <span data-en="Bachelor in BCA" data-gu="બી.સી.એ. (સ્નાતક)"></span></p>
-        <p><strong data-en="University:" data-gu="યુનિવર્સિટી:"></strong> <span data-en="Bhagwan Mahavir University" data-gu="ભગવાન મહાવીર યુનિવર્સિટી"></span></p>
-        <p><strong data-en="Passing Year:" data-gu="પાસિંગ વર્ષ:"></strong> <span data-en="2023" data-gu="૨૦૨૩"></span></p>
-      </div>
-      <h4 class="text-lg font-semibold mt-4 mb-2 border-b pb-1" data-en="Master's Degree" data-gu="માસ્ટર અભ્યાસ"></h4>
-      <div class="grid sm:grid-cols-2 gap-4">
-        <p><strong data-en="Degree (Planned):" data-gu="અભ્યાસ (યોજિત):"></strong> <span data-en="Master in Computer Science" data-gu="માસ્ટર ઓફ કમ્પ્યુટર સાયન્સ"></span></p>
-        <p><strong data-en="Target Country:" data-gu="લક્ષ્ય દેશ:"></strong> <span data-en="Canada / Ireland" data-gu="કેનાડા / આયર્લેન્ડ"></span></p>
-        <p><strong data-en="Start Year:" data-gu="શરૂઆત વર્ષ:"></strong> <span data-en="2026" data-gu="૨૦૨૬"></span></p>
-      </div>
-    </section>
-
-    <!-- Job Description -->
-    <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
-      <h3 class="text-xl font-semibold mb-4 border-b pb-2" data-en="Job Description" data-gu="નોકરી વિગત"></h3>
-      <p data-en="Frontend Developer (React.js Developer)" data-gu="ફ્રન્ટએન્ડ ડેવલપર (React.js ડેવલપર)"></p>
-      <p data-en="Currently not working at any company" data-gu="હાલમાં કોઈ કંપનીમાં નોકરી નથી"></p>
-    </section>
-
-    <!-- Family Details (Updated) -->
-    <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
-      <h3 class="text-xl font-semibold mb-4 border-b pb-2" data-en="Family Details" data-gu="પરિવારની માહિતી"></h3>
-
-      <!-- Father Details -->
-      <div class="mb-6 pb-4 border-b border-gray-300 dark:border-gray-700">
-        <h4 class="text-lg font-semibold mb-2" data-en="Father" data-gu="પિતા"></h4>
-        <div class="grid sm:grid-cols-2 gap-4">
-          <p><strong data-en="Name:" data-gu="નામ:"></strong> <span data-en="Ashokbhai Ganeshbhai Anaghan" data-gu="અશોકભાઈ ગણેશભાઈ અણઘણ"></span></p>
-          <p><strong data-en="Occupation:" data-gu="વ્યવસાય:"></strong> <span data-en="Textile" data-gu="ટેક્સટાઇલ"></span></p>
-        </div>
-      </div>
-
-      <!-- Mother Details -->
-      <div class="mb-6 pb-4 border-b border-gray-300 dark:border-gray-700">
-        <h4 class="text-lg font-semibold mb-2" data-en="Mother" data-gu="માતા"></h4>
-        <div class="grid sm:grid-cols-2 gap-4">
-          <p><strong data-en="Name:" data-gu="નામ:"></strong> <span data-en="Jayshreeben Ashokbhai Anaghan" data-gu="જયશ્રીબેન અશોકભાઈ અણઘણ"></span></p>
-          <p><strong data-en="Occupation:" data-gu="વ્યવસાય:"></strong> <span data-en="Housewife" data-gu="ગૃહિણી"></span></p>
-        </div>
-      </div>
-
-      <!-- Sibling Details -->
-      <div>
-        <h4 class="text-lg font-semibold mb-2" data-en="Elder Brother" data-gu="મોટો ભાઈ"></h4>
-        <div class="grid sm:grid-cols-2 gap-4">
-          <p><strong data-en="Name:" data-gu="નામ:"></strong> <span data-en="Darshil Ashokbhai Anaghan" data-gu="દર્શિલ અશોકભાઈ અણઘણ"></span></p>
-          <p><strong data-en="Education (Bachelor's):" data-gu="સ્નાતક અભ્યાસ:"></strong> <span data-en="B.Com (VNSGU)" data-gu="બી.કોમ (વી.એન.એસ.જી.યુ.)"></span></p>
-          <p><strong data-en="Education (Master's):" data-gu="માસ્ટર અભ્યાસ:"></strong> <span data-en="MBA (LMU, UK)" data-gu="એમ.બી.એ. (એલ.એમ.યુ., યુકે)"></span></p>
-          <p><strong data-en="Occupation:" data-gu="નોકરી:"></strong> <span data-en="Working in London, UK" data-gu="લંડન, UK માં નોકરી કરે છે"></span></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery -->
-    <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
-      <h3 class="text-xl font-semibold mb-4 border-b pb-2" data-en="Gallery" data-gu="ગેલેરી"></h3>
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <img src="1.jpg" alt="Pic 1" class="rounded-lg shadow hover:scale-105 transition-transform duration-300">
-        <img src="2.jpg" alt="Pic 2" class="rounded-lg shadow hover:scale-105 transition-transform duration-300">
-        <img src="3.jpg" alt="Pic 3" class="rounded-lg shadow hover:scale-105 transition-transform duration-300">
-      </div>
-    </section>
-
-    <!-- Social Media -->
-    <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 text-center">
-      <h3 class="text-xl font-semibold mb-4 border-b pb-2" data-en="Connect With Me" data-gu="મારું સંપર્ક"></h3>
-      <div class="flex justify-center gap-6 text-3xl mt-4">
-        <a href="https://wa.me/918866722633" target="_blank" class="hover:text-green-500" aria-label="WhatsApp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="mailto:anaghan1610@gmail.com" class="hover:text-red-500" aria-label="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
-        <a href="https://www.instagram.com/_.anaghan._009" target="_blank" class="hover:text-pink-500" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="text-center py-6 text-sm opacity-80 dark:text-gray-400">
-    <p data-en="Thank you for visiting!" data-gu="આ મુલાકાત માટે આભાર!"></p>
-  </footer>
-
-  <script>
-    function toggleDark() {
-      const html = document.documentElement;
-      html.classList.toggle('dark');
-      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-    }
-
-    function setLang(lang) {
-      localStorage.setItem('lang', lang);
-      currentLang = lang;
-      updateLang();
-      updateFlagStyles();
-    }
-
-    let currentLang = localStorage.getItem('lang');
-    if (!['en', 'gu'].includes(currentLang)) {
-      currentLang = 'en';
-      localStorage.setItem('lang', 'en');
-    }
-
-    function updateLang() {
-      document.querySelectorAll('[data-en]').forEach(el => {
-        const translated = el.getAttribute(`data-${currentLang}`);
-        if (translated !== null) {
-          el.textContent = translated;
-        }
-      });
-    }
-
-    function updateFlagStyles() {
-      document.getElementById('flag-en').classList.toggle('ring-2', currentLang === 'en');
-      document.getElementById('flag-gu').classList.toggle('ring-2', currentLang === 'gu');
-    }
-
-    window.onload = () => {
-      updateLang();
-      updateFlagStyles();
-    };
-  </script>
-
-</body>
-</html>
+<!DOCTYPE html><html lang="en" class="scroll-smooth">    
+<head>    
+  <meta charset="UTF-8" />    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+  <title>Anaghan's Profile</title>    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />    
+  <link rel="icon" href="my-avatar.png" type="image/png" />    
+  <link rel="manifest" href="manifest.json" />    
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>    
+  <script>    
+    if (localStorage.getItem('theme') === 'dark') {    
+      document.documentElement.classList.add('dark');    
+    }    
+  </script>    
+  <script src="https://cdn.tailwindcss.com"></script>    
+  <script>    
+    tailwind.config = {    
+      darkMode: 'class',    
+      theme: {    
+        extend: {    
+          fontFamily: { poppins: ['Poppins', 'sans-serif'] },    
+        },    
+      },    
+    };    
+  </script>    
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">    
+  <style>    
+    body { font-family: 'Poppins', sans-serif; }    
+    @media print { .no-print { display: none !important; } }    
+    @keyframes spin { to { transform: rotate(360deg); } }    
+    .animate-spin { animation: spin 1s linear infinite; }    
+  </style>    
+</head>    
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition duration-500">  <!-- Loader -->  <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white dark:bg-gray-900 z-[9999]">    
+    <div class="w-16 h-16 border-4 border-pink-400 border-t-blue-500 rounded-full animate-spin"></div>    
+  </div>  <!-- Header -->  <header class="no-print sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md p-4 flex justify-evenly items-center">    
+    <img src="my-avatar.png" class="h-14">    
+    <h1 class="text-xl font-bold tracking-wide flex items-center">Anaghan's Profile</h1>    
+    <div class="flex items-center gap-3">    
+      <button onclick="toggleDark()" class="bg-gray-200 dark:bg-gray-700 p-2 rounded">🌓</button>    
+      <div class="flex gap-1">    
+        <button id="flag-en" onclick="setLang('en')" class="text-2xl px-1 rounded">🇨🇦 En</button>    
+        <button id="flag-gu" onclick="setLang('gu')" class="text-2xl px-1 rounded">🇮🇳 Guj</button>    
+      </div>    
+    </div>    
+  </header>  <!-- Hero Section -->  <section class="bg-gradient-to-r from-pink-100 to-blue-100 dark:from-gray-800 dark:to-gray-700 py-10 text-center">    
+    <div class="flex flex-col items-center">    
+      <img src="my-avatar.png" alt="Profile Photo" class="rounded-full shadow-lg w-32 h-32 object-cover mb-4 border-4 border-white dark:border-gray-800">    
+      <h2 class="text-3xl font-bold mb-2" data-en="Welcome to My Profile" data-gu="મારા પરિચયમાં આપનું સ્વાગત છે"></h2>    
+      <p class="text-base" data-en="Let's connect for a beautiful future." data-gu="ચાલો એક સુંદર ભવિષ્ય માટે જોડાવા ચાલો."></p>    
+    </div>    
+  </section>  <main class="max-w-5xl mx-auto px-4 py-8 space-y-10 text-base"><!-- My Information -->    
+<section class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">    
+  <div class="flex items-center gap-2 mb-4">    
+    <lord-icon src="https://cdn.lordicon.com/hpivxauj.json" trigger="loop" delay="500" style="width:40px;height:40px"></lord-icon>    
+    <h3 class="text-xl font-semibold border-b pb-2" data-en="My Information" data-gu="મારી માહિતી"></h3>    
+  </div>    
+  <div class="grid sm:grid-cols-2 gap-4 mb-6">    
+    <p><strong data-en="Full Name:" data-gu="મારું નામ:"></strong> <span data-en="Anaghan Smit Ashokbhai" data-gu="અણઘણ સ્મિત અશોકભાઇ"></span></p>    
+    <p><strong data-en="Age:" data-gu="ઉંમર:"></strong> <span data-en="23" data-gu="૨૩"></span></p>    
+    <p><strong data-en="Caste:" data-gu="જાતિ:"></strong> <span data-en="Patel (Leuva)" data-gu="પટેલ (લેઉવા)"></span></p>    
+    <p><strong data-en="City & Country:" data-gu="શહેર અને દેશ:"></strong> <span data-en="Surat, Gujarat" data-gu="સુરત, ગુજરાત"></span></p>    
+  </div>    
+  <h4 class="text-lg font-semibold mt-4 mb-2 border-b pb-1" data-en="Bachelor's Degree" data-gu="સ્નાતક અભ્યાસ"></h4>    
+  <div class="grid sm:grid-cols-2 gap-4 mb-4">    
+    <p><strong data-en="Degree:" data-gu="અભ્યાસ:"></strong> <span data-en="Bachelor in BCA" data-gu="બી.સી.એ. (સ્નાતક)"></span></p>    
+    <p><strong data-en="University:" data-gu="યુનિવર્સિટી:"></strong> <span data-en="Bhagwan Mahavir University" data-gu="ભગવાન મહાવીર યુનિવર્સિટી"></span></p>    
+    <p><strong data-en="Passing Year:" data-gu="પાસિંગ વર્ષ:"></strong> <span data-en="2023" data-gu="૨૦૨૩"></span></p>    
+  </div>    
+  <h4 class="text-lg font-semibold mt-4 mb-2 border-b pb-1" data-en="Master's Degree" data-gu="માસ્ટર અભ્યાસ"></h4>    
+  <div class="grid sm:grid-cols-2 gap-4">    
+    <p><strong data-en="Degree (Planned):" data-gu="અભ્યાસ (યોજિત):"></strong> <span data-en="Master in Computer Science" data-gu="માસ્ટર ઓફ કમ્પ્યુટર સાયન્સ"></span></p>    
+    <p><strong data-en="Target Country:" data-gu="લક્ષ્ય દેશ:"></strong> <span data-en="Canada / Ireland" data-gu="કેનાડા / આયર્લેન્ડ"></span></p>    
+    <p><strong data-en="Start Year:" data-gu="શરૂઆત વર્ષ:"></strong> <span data-en="2026" data-gu="૨૦૨૬"></span></p>    
+  </div>    
+</section>    
+    
+<!-- Job Description -->    
+<section class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">    
+  <div class="flex items-center gap-2 mb-4">    
+    <lord-icon src="https://cdn.lordicon.com/slkvcfos.json" trigger="loop" delay="500" style="width:40px;height:40px"></lord-icon>    
+    <h3 class="text-xl font-semibold border-b pb-2" data-en="Job Description" data-gu="નોકરી વિગત"></h3>    
+  </div>    
+  <p data-en="Frontend Developer (React.js Developer)" data-gu="ફ્રન્ટએન્ડ ડેવલપર (React.js ડેવલપર)"></p>    
+  <p data-en="Currently not working at any company" data-gu="હાલમાં કોઈ કંપનીમાં નોકરી નથી"></p>    
+</section>    
+    
+<!-- Family Details -->    
+<section class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">    
+  <div class="flex items-center gap-2 mb-4">    
+    <lord-icon src="https://cdn.lordicon.com/igpbsrza.json" trigger="loop" delay="500" style="width:40px;height:40px"></lord-icon>    
+    <h3 class="text-xl font-semibold border-b pb-2" data-en="Family Details" data-gu="પરિવારની માહિતી"></h3>    
+  </div>    
+  <div class="mb-6 pb-4 border-b border-gray-300 dark:border-gray-700">    
+    <h4 class="text-lg font-semibold mb-2" data-en="Father" data-gu="પિતા"></h4>    
+    <div class="grid sm:grid-cols-2 gap-4">    
+      <p><strong data-en="Name:" data-gu="નામ:"></strong> <span data-en="Ashokbhai Ganeshbhai Anaghan" data-gu="અશોકભાઈ ગણેશભાઈ અણઘણ"></span></p>    
+      <p><strong data-en="Occupation:" data-gu="વ્યવસાય:"></strong> <span data-en="Textile" data-gu="ટેક્સટાઇલ"></span></p>    
+    </div>    
+  </div>    
+  <div class="mb-6 pb-4 border-b border-gray-300 dark:border-gray-700">    
+    <h4 class="text-lg font-semibold mb-2" data-en="Mother" data-gu="માતા"></h4>    
+    <div class="grid sm:grid-cols-2 gap-4">    
+      <p><strong data-en="Name:" data-gu="નામ:"></strong> <span data-en="Jayshreeben Ashokbhai Anaghan" data-gu="જયશ્રીબેન અશોકભાઈ અણઘણ"></span></p>    
+      <p><strong data-en="Occupation:" data-gu="વ્યવસાય:"></strong> <span data-en="Housewife" data-gu="ગૃહિણી"></span></p>    
+    </div>    
+  </div>    
+  <div>    
+    <h4 class="text-lg font-semibold mb-2" data-en="Elder Brother" data-gu="મોટો ભાઈ"></h4>    
+    <div class="grid sm:grid-cols-2 gap-4">    
+      <p><strong data-en="Name:" data-gu="નામ:"></strong> <span data-en="Darshil Ashokbhai Anaghan" data-gu="દર્શિલ અશોકભાઈ અણઘણ"></span></p>    
+      <p><strong data-en="Education (Bachelor's):" data-gu="સ્નાતક અભ્યાસ:"></strong> <span data-en="B.Com (VNSGU)" data-gu="બી.કોમ (વી.એન.એસ.જી.યુ.)"></span></p>    
+      <p><strong data-en="Education (Master's):" data-gu="માસ્ટર અભ્યાસ:"></strong> <span data-en="MBA (LMU, UK)" data-gu="એમ.બી.એ. (એલ.એમ.યુ., યુકે)"></span></p>    
+      <p><strong data-en="Occupation:" data-gu="નોકરી:"></strong> <span data-en="Working in London, UK" data-gu="લંડન, UK માં નોકરી કરે છે"></span></p>    
+    </div>    
+  </div>    
+</section>    
+    
+<!-- Gallery -->    
+<section class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">    
+  <div class="flex items-center gap-2 mb-4">    
+    <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" delay="500" style="width:40px;height:40px"></lord-icon>    
+    <h3 class="text-xl font-semibold border-b pb-2" data-en="Gallery" data-gu="ગેલેરી"></h3>    
+  </div>    
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">    
+    <img src="1.jpg" alt="Pic 1" class="rounded-lg shadow hover:scale-105 transition-transform duration-300">    
+    <img src="2.jpg" alt="Pic 2" class="rounded-lg shadow hover:scale-105 transition-transform duration-300">    
+    <img src="3.jpg" alt="Pic 3" class="rounded-lg shadow hover:scale-105 transition-transform duration-300">    
+  </div>    
+</section>    
+    
+<!-- Social Media -->    
+<section class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 text-center">    
+  <div class="flex items-center justify-center gap-2 mb-4">    
+    <lord-icon src="https://cdn.lordicon.com/bhfjfgqz.json" trigger="loop" delay="500" style="width:40px;height:40px"></lord-icon>    
+    <h3 class="text-xl font-semibold border-b pb-2" data-en="Connect With Me" data-gu="મારું સંપર્ક"></h3>    
+  </div>    
+  <div class="flex justify-center gap-6 text-3xl mt-4">    
+    <a href="https://wa.me/918866722633" target="_blank" class="hover:text-green-500" aria-label="WhatsApp">    
+      <i class="fab fa-whatsapp"></i>    
+    </a>    
+    <a href="mailto:anaghan1610@gmail.com" class="hover:text-red-500" aria-label="Email">    
+      <i class="fas fa-envelope"></i>    
+    </a>    
+    <a href="https://www.instagram.com/_.anaghan._009" target="_blank" class="hover:text-pink-500" aria-label="Instagram">    
+      <i class="fab fa-instagram"></i>    
+    </a>    
+  </div>    
+</section>    
+    
+  </main>  <footer class="text-center py-6 text-sm opacity-80 dark:text-gray-400">    
+    <p data-en="Thank you for visiting!" data-gu="આ મુલાકાત માટે આભાર!"></p>    
+  </footer>  <!-- PDF Floating Button and Toast -->  <button onclick="downloadPDF()" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg z-50 hover:bg-blue-700">    
+    <i class="fas fa-file-download"></i>    
+  </button>    
+  <div id="toast" class="fixed bottom-20 right-6 bg-green-600 text-white py-2 px-4 rounded hidden">PDF Downloaded!</div>  <script>    
+    window.addEventListener('load', () => {    
+      document.getElementById('loader').style.display = 'none';    
+    });    
+    
+    function toggleDark() {    
+      const html = document.documentElement;    
+      html.classList.toggle('dark');    
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');    
+    }    
+    
+    function setLang(lang) {    
+      localStorage.setItem('lang', lang);    
+      currentLang = lang;    
+      updateLang();    
+      updateFlagStyles();    
+    }    
+    
+    let currentLang = localStorage.getItem('lang');    
+    if (!['en', 'gu'].includes(currentLang)) {    
+      currentLang = 'en';    
+      localStorage.setItem('lang', 'en');    
+    }    
+    
+    function updateLang() {    
+      document.querySelectorAll('[data-en]').forEach(el => {    
+        const translated = el.getAttribute(`data-${currentLang}`);    
+        if (translated !== null) {    
+          el.textContent = translated;    
+        }    
+      });    
+    }    
+    
+    function updateFlagStyles() {    
+      document.getElementById('flag-en').classList.toggle('ring-2', currentLang === 'en');    
+      document.getElementById('flag-gu').classList.toggle('ring-2', currentLang === 'gu');    
+    }    
+    
+    function downloadPDF() {    
+      window.print();    
+      const toast = document.getElementById('toast');    
+      toast.classList.remove('hidden');    
+      setTimeout(() => toast.classList.add('hidden'), 2000);    
+    }    
+    
+    window.onload = () => {    
+      updateLang();    
+      updateFlagStyles();    
+    };    
+    
+    if ('serviceWorker' in navigator) {    
+      navigator.serviceWorker.register('service-worker.js');    
+    }    
+  </script></body>    
+</html>    
